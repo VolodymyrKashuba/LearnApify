@@ -12,9 +12,10 @@
     },
       "keyword": {
           "title" : "keyword",
-          "type" : "string",
+          "type" : "object",
           "description": "default keyword",
-          "default" : "phone"
+          "prefill" : {"keyword":  "phone"},
+          "editor" : "json"
       }
 
   },
