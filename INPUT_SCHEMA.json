@@ -9,7 +9,14 @@
       "type": "string",
       "description": "Trying to setup git",
       "editor": "textfield"
-    }
+    },
+      "keyword": {
+          "title" : "keyword",
+          "type" : "string",
+          "description": "default keyword",
+          "default" : "phone"
+      }
+
   },
   "required": []
 }
