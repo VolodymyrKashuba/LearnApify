@@ -1,17 +1,15 @@
 {
-  "title": "PuppeteerCrawler Template",
+  "title": "Input Schema for apify lesson 2",
   "description": "lorem ipsum",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "startUrls": {
-      "title": "Start URLs",
-      "type": "array",
-      "description": "URLs to start with.",
-      "editor": "requestListSources"
+    "message": {
+      "title": "Apify lesson 2",
+      "type": "string",
+      "description": "Trying to setup git",
+      "editor": "textfield"
     }
   },
-  "required": [
-    "startUrls"
-  ]
+  "required": []
 }
