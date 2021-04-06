@@ -1,5 +1,5 @@
 const Apify = require('apify');
-
+const {sleep} = Apify.utils;
 const { utils: { log } } = Apify;
 exports.handleStart = async (context , requestQueue) => {
     const { page} = context;
@@ -50,7 +50,9 @@ exports.handleOffers = async (context , requestQueue) => {
 
     log.info('Crawling offers pages')
     let formatedData;
+    await sleep(2000);
     await page.waitForSelector('#aod-offer-list');
+    await sleep(3000);
     console.log(request.url)
     if(await page.$('#aod-offer')){
         const data = await page.$$eval('#aod-offer' , element => {
@@ -61,7 +63,7 @@ exports.handleOffers = async (context , requestQueue) => {
                 let price = el.querySelector('div#aod-offer span.a-price > .a-offscreen').innerText;
                 let sellerName = el.querySelector('.a-col-right > a.a-link-normal').innerText;
                 let shippingPrice = '';
-                if(!(el.querySelector('#delivery-message .a-color-error'))){
+                if(!(el.querySelector('#delivery-message .a-color-error')) && !(el.querySelector('#delivery-message'))){
                     shippingPrice = el.querySelector('.a-size-base > .a-color-secondary.a-size-base').innerText;
                 }
 

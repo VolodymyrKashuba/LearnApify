@@ -11,7 +11,7 @@
       "editor": "textfield"
     },
       "keyword": {
-          "title" : "keyword",
+          "title" : "keywords",
           "type" : "object",
           "description": "default keyword",
           "prefill" : {"keyword":  "phone"},
